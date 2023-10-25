@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
@@ -46,6 +45,7 @@ class CarouselItemController extends Controller
      */
     public function update(CarouselItemsRequest $request, string $id)
     {
+    
         $validated = $request->validated();
 
         $carouselItem = CarouselItems::findOrFail($id);
