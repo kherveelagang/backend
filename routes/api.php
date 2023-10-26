@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Api\CarouselItemController;
 
 /*
@@ -33,3 +34,8 @@ Route::put('/user/{id}',[UserController::class, 'update'])->name('user.update');
 Route::put('/user/email/{id}',[UserController::class, 'email'])->name('user.email');
 Route::put('/user/password/{id}',[UserController::class, 'password'])->name('user.password');
 Route::delete('/user/{id}',[UserController::class, 'destroy']);
+
+Route::get('/message',[MessageController::class, 'index']);
+Route::get('/message/{id}',[MessageController::class, 'show']);
+Route::post('/message',[MessageController::class, 'store']);
+Route::delete('/message/{id}',[MessageController::class, 'destroy']);
